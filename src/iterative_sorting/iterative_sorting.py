@@ -27,22 +27,23 @@ def bubble_sort( arr ):
             if arr[i] < arr[i-1]:
                 temp1 = arr[i]
                 temp2 = arr[i-1]
+
                 arr[i] = temp2
                 arr[i-1] = temp1
+                
                 swapped = True
                 j+=1
-                print(j)
             elif swapped == True and arr[i] > arr[i-1] and j > len(arr):
                 j = 0
-                print('no swap', arr[i], arr[i-1], j, swapped)
             elif arr[i] > arr[i-1]:
                 j+=1
-                swapped = False
-                print('no swap else', arr[i], arr[i-1], j, swapped)
                 if j > len(arr):
                     j = 0
-                    print('something')
-
+                    swapped = False
+                elif arr[i] > arr[i-1] and swapped == False and j == len(arr):
+                    break
+    
+            
     return arr 
 
 
