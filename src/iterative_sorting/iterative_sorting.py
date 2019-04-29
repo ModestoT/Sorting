@@ -21,29 +21,33 @@ def selection_sort( arr ):
 
 # TO-DO:  implement the Bubble Sort function below
 def bubble_sort( arr ):
-    swapped = False
-    j = 0
-    while j < len(arr):
-        for i in range(1, len(arr)):
-            if arr[i] < arr[i-1]:
-                temp1 = arr[i]
-                temp2 = arr[i-1]
+    # swapped = False
+    # j = 0
+    # while j < len(arr):
+    #     for i in range(1, len(arr)):
+    #         if arr[i] < arr[i-1]:
+    #             temp1 = arr[i]
+    #             temp2 = arr[i-1]
 
-                arr[i] = temp2
-                arr[i-1] = temp1
+    #             arr[i] = temp2
+    #             arr[i-1] = temp1
 
-                swapped = True
-                j+=1
-            elif swapped == True and arr[i] > arr[i-1] and j > len(arr):
-                j = 0
-            elif arr[i] > arr[i-1]:
-                j+=1
-                if j > len(arr):
-                    j = 0
-                    swapped = False
-                elif arr[i] > arr[i-1] and swapped == False and j == len(arr):
-                    break
+    #             swapped = True
+    #             j+=1
+    #         elif swapped == True and arr[i] > arr[i-1] and j > len(arr):
+    #             j = 0
+    #         elif arr[i] > arr[i-1]:
+    #             j+=1
+    #             if j > len(arr):
+    #                 j = 0
+    #                 swapped = False
+    #             elif arr[i] > arr[i-1] and swapped == False and j == len(arr):
+    #                 break
     
+    for i in range(len(arr) - 1):
+        for j in range(len(arr) - 2):
+            if arr[i] > arr[i+1]:
+                arr[i], arr[i+1] = arr[i+1], arr[i]
             
     return arr 
 
