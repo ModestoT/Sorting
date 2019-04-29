@@ -20,11 +20,38 @@ def selection_sort( arr ):
 
 # TO-DO:  implement the Bubble Sort function below
 def bubble_sort( arr ):
+    swapped = False
+    j = 0
+    while j < len(arr):
+        for i in range(1, len(arr)):
+            if arr[i] < arr[i-1]:
+                temp1 = arr[i]
+                temp2 = arr[i-1]
+                arr[i] = temp2
+                arr[i-1] = temp1
+                swapped = True
+                j+=1
+                print(j)
+            elif swapped == True and arr[i] > arr[i-1] and j > len(arr):
+                j = 0
+                print('no swap', arr[i], arr[i-1], j, swapped)
+            elif arr[i] > arr[i-1]:
+                j+=1
+                swapped = False
+                print('no swap else', arr[i], arr[i-1], j, swapped)
+                if j > len(arr):
+                    j = 0
+                    print('something')
 
-    return arr
+    return arr 
 
 
 # STRETCH: implement the Count Sort function below
 def count_sort( arr, maximum=-1 ):
 
     return arr
+
+
+arr1 = [1, 5, 8, 4, 2, 9, 6, 0, 3, 7]
+
+print(bubble_sort(arr1))
