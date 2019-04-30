@@ -45,9 +45,9 @@ def bubble_sort( arr ):
     #                 break
     
     for i in range(len(arr) - 1):
-        for j in range(len(arr) - 2):
-            if arr[i] > arr[i+1]:
-                arr[i], arr[i+1] = arr[i+1], arr[i]
+        for j in range(len(arr) - 1):
+            if arr[j] > arr[i+1]:
+                arr[j], arr[i+1] = arr[i+1], arr[j]
             
     return arr 
 
@@ -60,4 +60,4 @@ def count_sort( arr, maximum=-1 ):
 
 arr1 = [1, 5, 8, 4, 2, 9, 6, 0, 3, 7]
 
-print(selection_sort(arr1))
+print(bubble_sort(arr1))
