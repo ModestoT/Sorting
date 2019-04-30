@@ -4,7 +4,6 @@ def merge( arrA, arrB ):
     merged_arr = [0] * elements
     # TO-DO
     a = b = i = 0
-    
     while a < len(arrA) and b < len(arrB):
       if arrA[a] <= arrB[b]:
         merged_arr[i] = arrA[a]
@@ -22,22 +21,21 @@ def merge( arrA, arrB ):
       merged_arr[i] = arrB[b]
       b+=1
       i+=1
-      
-    print(merged_arr)
+
     return merged_arr
 
 
 # TO-DO: implement the Merge Sort function below USING RECURSION
 def merge_sort( arr ):
-    # TO-DO
-    if len(arr) > 1:
-      middle = int(len(arr)/ 2)
-      arr1 = merge_sort(arr[:middle])
-      arr2 = merge_sort(arr[middle:])
+  # TO-DO
+  if len(arr) > 1:
+    middle = int(len(arr)/ 2)
+    arr1 = merge_sort(arr[:middle])
+    arr2 = merge_sort(arr[middle:])
 
-      merge(arr1, arr2)
-    
-    return arr
+    arr =  merge(arr1, arr2)
+  
+  return arr
 
 
 # STRETCH: implement an in-place merge sort algorithm
@@ -61,4 +59,4 @@ def timsort( arr ):
 
 arr1 = [1, 5, 8, 4, 2, 9, 6, 0, 3, 7]
 
-merge_sort(arr1)
+print(merge_sort(arr1))
